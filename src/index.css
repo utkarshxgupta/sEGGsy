@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,700;0,900;1,900&family=Be+Vietnam+Pro:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-background: #fcf9f2;
+  --color-on-surface: #1c1c18;
+  --color-on-surface-variant: #5c3f42;
+  --color-secondary: #30628a;
+  --color-tertiary: #b7003b;
+  --color-tertiary-container: #e01a4f;
+  --color-on-tertiary: #ffffff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f6f3ec;
+  --color-surface-container-highest: #e5e2db;
+  --color-surface-variant: #e5e2db;
+
+  --font-headline: "Epilogue", sans-serif;
+  --font-body: "Be Vietnam Pro", sans-serif;
+  --font-label: "Space Grotesk", sans-serif;
+}
+
+@layer utilities {
+  .draft-bg {
+    background-image: 
+      linear-gradient(rgba(48, 98, 138, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(48, 98, 138, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  
+  .halftone-shade {
+    background-image: radial-gradient(circle, currentColor 1px, transparent 1px);
+    background-size: 4px 4px;
+  }
+  
+  .rough-edge {
+    clip-path: polygon(2% 0%, 98% 1%, 100% 96%, 95% 100%, 4% 98%, 0% 5%);
+  }
+  
+  .jagged-border {
+    border: 2px solid var(--color-on-surface);
+    box-shadow: 4px 4px 0px 0px var(--color-on-surface);
+  }
+  
+  .speech-bubble-tail {
+    clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+  }
+}
+
+body {
+  min-height: max(884px, 100dvh);
+}
